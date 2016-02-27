@@ -1,0 +1,16 @@
+﻿CREATE TABLE [dbo].[UserData] (
+    [Id]       INT           NOT NULL,
+    [userid] INT NOT NULL,
+    [firstname]    NVARCHAR (50) NOT NULL,
+    [lastname] NVARCHAR (50) NOT NULL,
+    [email_updates]  BIT NULL,
+    [email] NVARCHAR(50) NULL, 
+    [username] NVARCHAR(50) NOT NULL, 
+    [password] NVARCHAR(50) NOT NULL, 
+    [last_login] DATETIME NULL, 
+    [programid] INT NULL, 
+    [logged_in] BIT NOT NULL, 
+    [ipaddress] NVARCHAR(50) NULL, 
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
