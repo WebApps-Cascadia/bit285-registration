@@ -10,15 +10,16 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataKeyNames="Id" DataSourceID="LinqDataSource1" GridLines="Vertical">
+        <asp:Label ID="lblWelcome" runat="server" Text="Label"></asp:Label>
+    
+        <asp:GridView ID="GridView1" runat="server" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" CellPadding="3" DataSourceID="LinqDataSource1" GridLines="Vertical" AllowPaging="True">
             <AlternatingRowStyle BackColor="#DCDCDC" />
             <Columns>
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
-                <asp:BoundField DataField="Id" HeaderText="Id" ReadOnly="True" SortExpression="Id" InsertVisible="False" />
-                <asp:BoundField DataField="UserName" HeaderText="UserName" SortExpression="UserName" />
-                <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
-                <asp:BoundField DataField="Password" HeaderText="Password" SortExpression="Password" />
-                <asp:BoundField DataField="Country" HeaderText="Country" SortExpression="Country" />
+                <asp:BoundField DataField="email" HeaderText="email" ReadOnly="True" SortExpression="email" />
+                <asp:BoundField DataField="userName" HeaderText="userName" SortExpression="userName" ReadOnly="True" />
+                <asp:BoundField DataField="lastLogin" HeaderText="lastLogin" SortExpression="lastLogin" ReadOnly="True" />
+                <asp:BoundField DataField="ipAddress" HeaderText="ipAddress" SortExpression="ipAddress" ReadOnly="True" />
+                <asp:BoundField DataField="programID" HeaderText="programID" SortExpression="programID" ReadOnly="True" />
             </Columns>
             <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
             <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />
@@ -30,7 +31,7 @@
             <SortedDescendingCellStyle BackColor="#CAC9C9" />
             <SortedDescendingHeaderStyle BackColor="#000065" />
         </asp:GridView>
-        <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="RegistrationDataClassesDataContext" EnableDelete="True" EnableInsert="True" EnableUpdate="True" EntityTypeName="" TableName="UserDatas">
+        <asp:LinqDataSource ID="LinqDataSource1" runat="server" ContextTypeName="LinqToDataDataContext" EntityTypeName="" TableName="UserDatas" Select="new (email, userName, lastLogin, ipAddress, programID)">
         </asp:LinqDataSource>
     
     </div>

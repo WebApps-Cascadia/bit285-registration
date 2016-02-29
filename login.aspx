@@ -68,7 +68,7 @@
             </tr>
         </table>
         <p>
-            <a href="NewAccount.aspx"><span class="auto-style6">Need a New Account?</span></a></p>
+            <a href="NewAccount.aspx"><span class="auto-style6">Need a New Account?</span></a>
         </p>
 
     </form>

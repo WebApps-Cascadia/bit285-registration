@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="bit285-registartion-db" Class="LinqToDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=tcp:bit285-fraktal.database.windows.net,1433;Initial Catalog=bit285-registartion-db;User ID=fraktal@bit285-fraktal;Connect Timeout=30;Encrypt=True;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="bit285_registartion_dbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserData" Member="UserDatas">
+    <Type Name="UserData">
+      <Column Name="userID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="firstName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="emailUpdates" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="userName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="lastLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="programID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="loggedIn" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ipAddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

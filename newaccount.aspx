@@ -34,18 +34,34 @@
         <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Names="Arial" ForeColor="#CCFFFF" Text="New Account Page"></asp:Label>
 &nbsp;<table class="auto-style1">
             <tr>
-                <td class="auto-style3">User Name:</td>
+                <td class="auto-style3">First Name:</td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="txtUsername" runat="server" Width="170px"></asp:TextBox>
+                    <asp:TextBox ID="txtFirstName" runat="server" Width="170px"></asp:TextBox>
                 </td>
                 <td class="auto-style5">
-                    <asp:RequiredFieldValidator ID="rfvUsername" runat="server" ControlToValidate="txtUsername" ErrorMessage="User Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvFirstName" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">Last Name:</td>
+                <td class="auto-style6">
+                    <asp:TextBox runat="server" ID="txtLastName" Width="170px"></asp:TextBox>
+                </td>
+                <td class="auto-style5">
+                    <asp:RequiredFieldValidator ID="rfvLastName" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last Name is required" ForeColor="Red"></asp:RequiredFieldValidator>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style3">User Name:</td>
+                <td class="auto-style6">
+                    <asp:TextBox runat="server" ID="txtUserName" Width="170px"></asp:TextBox>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style3">Email:</td>
                 <td class="auto-style6">
-                    <asp:TextBox ID="txtEmail" runat="server" Width="170px"></asp:TextBox>
+                    <asp:TextBox ID="txtEmail" runat="server" Width="170px"></asp:TextBox><br/>
+                    <asp:CheckBox runat="server" ID="chkEmailUpdates" Text="Get Email Updates"/>
                 </td>
                 <td class="auto-style5">
                     <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email required" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -74,19 +90,13 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style3">Country:</td>
+                <td class="auto-style3">Program ID:</td>
                 <td class="auto-style6">
-                    <asp:DropDownList ID="DropDownList1" runat="server" Width="175px">
-                        <asp:ListItem>Select Country</asp:ListItem>
-                        <asp:ListItem>United States</asp:ListItem>
-                        <asp:ListItem>Canada</asp:ListItem>
-                        <asp:ListItem>Mexico</asp:ListItem>
-                        <asp:ListItem>Cuba</asp:ListItem>
-                        <asp:ListItem>El Salvador</asp:ListItem>
-                    </asp:DropDownList>
+                    <asp:TextBox runat="server" ID="txtProgramID" Width="170px"></asp:TextBox>
                 </td>
                 <td class="auto-style5">
-                    <asp:RequiredFieldValidator ID="rfvCountry" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Select a country name" ForeColor="Red" InitialValue="Select Country"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator runat="server" ID="rfvProgramID" ControlToValidate="txtProgramID" ErrorMessage="Program ID required" ForeColor="red"></asp:RequiredFieldValidator><br/>
+                    <asp:RegularExpressionValidator runat="server" ID="revProgramID" ControlToValidate="txtProgramID" ErrorMessage="Program ID must be 1 or 2 digit number" ForeColor="red" ValidationExpression="^\d{1,2}$"></asp:RegularExpressionValidator>
                 </td>
             </tr>
             <tr>

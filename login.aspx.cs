@@ -1,4 +1,11 @@
-﻿using System;
+﻿/**
+* Fred Jaworski
+* Assignment 2
+* 2/26/2016
+*
+* Code for processing login
+*/
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -23,18 +30,31 @@ public partial class Login : System.Web.UI.Page
         com.Parameters.AddWithValue("@username", txtLoginUser.Text);
         com.Parameters.AddWithValue("@password", txtLoginPassword.Text);
         int temp = Convert.ToInt32(com.ExecuteScalar());
-        conn.Close();
+        
         if (temp == 1)
         {
-            Session["New"] = txtLoginUser.Text;
+            Session["User"] = txtLoginUser.Text;
+	        Session["LoggedIn"] = true;
             lblPasswordStatus.Visible = true;
             lblPasswordStatus.Text = "Credentials are validated!";
-            Response.Redirect("Welcome.aspx");
+
+			DateTime time = DateTime.Now;
+	        string ipAddress = HttpContext.Current.Request.ServerVariables["REMOTE_ADDR"];
+	        string updateLoginTime = "UPDATE UserData SET lastLogin=@lastLogin, ipAddress=@ip, loggedIn=@true WHERE UserName=@username";
+			SqlCommand cmd = new SqlCommand(updateLoginTime, conn);
+	        cmd.Parameters.AddWithValue("@lastLogin", time);
+	        cmd.Parameters.AddWithValue("@ip", ipAddress);
+	        cmd.Parameters.AddWithValue("@true", true);
+	        cmd.Parameters.AddWithValue("@username", txtLoginUser.Text);
+	        cmd.ExecuteNonQuery();
+			conn.Close();
+
+			Response.Redirect("Welcome.aspx");
         }
         else
         {
             lblPasswordStatus.Visible = true;
-            lblPasswordStatus.Text = "Invalid credentials!Try again.";
+            lblPasswordStatus.Text = "Invalid credentials! Try again.";
         }   
     }
 }
