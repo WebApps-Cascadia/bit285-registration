@@ -37,7 +37,11 @@
             <tr>
                 <td class="auto-style3">User Name: </td>
                 <td class="auto-style4">
+
+
                     <asp:TextBox ID="txtLoginUser" runat="server"></asp:TextBox>
+
+
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="rfvLoginUser0" runat="server" ControlToValidate="txtLoginUser" ErrorMessage="User name required!" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -68,7 +72,7 @@
             </tr>
         </table>
         <p>
-            <a href="NewAccount.aspx"><span class="auto-style6">Need a New Account?</span></a></p>
+            <a href="NewAccount.aspx"><span class="auto-style6">Need a New Account?</span></a>
         </p>
 
     </form>
