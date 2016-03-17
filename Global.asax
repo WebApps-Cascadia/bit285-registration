@@ -5,7 +5,7 @@
     void Application_Start(object sender, EventArgs e)
     {
         // Was getting a javascript error during validation
-        ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
+        //ValidationSettings.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
 
         
         // From Assignment 1. Kept as reference
